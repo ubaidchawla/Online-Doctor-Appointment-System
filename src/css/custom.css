@@ -3,6 +3,16 @@ body {font-size:16px;}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
 
+.bug-red, .bug-hover-red:hover{
+  color: #fff;
+  background-color: #A52A2A ;
+}
+
+.bug-red-inverted{
+  color: #A52A2A !important;
+  background-color: #fff !important;
+}
+
 .input-container {
     display: -ms-flexbox; /* IE10 */
     display: flex;
