@@ -39,7 +39,7 @@ display: -ms-flexbox; /* IE10 */
     display: flex;
     width: 100%;
     margin-bottom: 15px;
-}   
+}
 
 
 . {
@@ -73,73 +73,71 @@ display: -ms-flexbox; /* IE10 */
 <body style="background-color:#B6B6B4;">
 <form style="max-width:500px;margin:auto">
   <h2>Patient Register Form</h2>
-  
+
     <div class="input-container">
     <i class="fa fa-user icon"></i>
     <input class="input-field" type="text" placeholder="Name" name="name">
   </div>
-  
-  
+
+
   <div class="input-container">
     <i class="fa fa-user icon"></i>
     <input class="input-field" type="number" placeholder="Age" name="Age">
   </div>
-  
+
   <div class="input-container">
     <i class="fa fa-user icon"></i>
     <input class="input-field" type="number" placeholder="height" name="height">
   </div>
 
-  
+
   <div class="input-container">
     <i class="fa fa-tint icon"></i>
     <input class="input-field" type="text" placeholder="Blood type" name="Blood type">
   </div>
-  
+
   <div class="input-container">
     <i class="fa fa-user icon"></i>
     <input class="input-field" type="text" placeholder="Username" name="usernam">
   </div>
 
-  
 
- 
- <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Select Gender
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Male</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Female</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Other</a></li>
-     
-      
-    </ul>
+
+
+  <div class="form-group">
+    <select style="width:100%;color:white;background:#AF2A2A;padding:4%;">
+      <option>Gender</option>
+      <option>Male</option>
+     <option>Female</option>
+     <option>Other</option>`
+    </select>
   </div>
+
 
 
   <div class="input-container">
     <i class="fa fa-envelope icon"></i>
     <input class="input-field" type="text" placeholder="Email" name="email">
   </div>
-  
+
   <div class="input-container">
     <i class="fa fa-phone icon"></i>
     <input class="input-field" type="number" placeholder="Phone number" name="Phone number">
   </div>
-  
-  
-  
+
+
+
   <div class="input-container">
     <i class="fa fa-key icon"></i>
     <input class="input-field" type="password" placeholder="Password" name="psw">
   </div>
-  
-  
+
+
   <div class="input-container">
     <i class="fa fa-key icon"></i>
     <input class="input-field" type="password" placeholder="Retype Password" name="psw">
   </div>
-  
+
 
   <button type="submit" class="btn">Register</button>
 </form>
