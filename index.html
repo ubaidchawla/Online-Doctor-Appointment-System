@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
@@ -20,10 +23,11 @@ body {font-size:16px;}
     <h3 class="w3-padding-64"><b>Online<br>Healthcare</b></h3>
   </div>
   <div class="w3-bar-block">
-    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
-    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">My profile</a> 
-    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Appointments</a> 
-    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">List of doctors</a> 
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">My profile</a>
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Appointments</a>
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">List of doctors</a>
+    <button type="button" onclick="alert('go fuck yourself')" class="btn" style="background-color:white; color:red;">Register as a Doctor</button>
   </div>
 </nav>
 
@@ -45,19 +49,19 @@ body {font-size:16px;}
     <h1 class="w3-xxxlarge w3-text-red"><b>Cooperating hospitals.</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
   </div>
-  
+
   <!-- Photo grid (modal) -->
   <div class="w3-row-padding">
     <div class="w3-half">
       <img src="src/images/1.jpg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
       <img src="src/images/2.jpg" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian design">
-      
+
     </div>
 
     <div class="w3-half">
       <img src="src/images/3.jpg" style="width:100%" onclick="onClick(this)" alt="Windows for the atrium">
       <img src="src/images/4.jpg" style="width:100%" onclick="onClick(this)" alt="Bedroom and office in one space">
-   
+
     </div>
   </div>
 
@@ -80,7 +84,7 @@ body {font-size:16px;}
     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
   </div>
-  
+
   <!-- Designers -->
   <div class="w3-container" id="designers" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Doctors.</b></h1>
@@ -128,7 +132,7 @@ body {font-size:16px;}
   </div>
 
   <!-- Packages / Pricing Tables -->
-  
+
   <!-- Contact -->
   <div class="w3-container" id="contact" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Your experience.</b></h1>
@@ -148,7 +152,7 @@ body {font-size:16px;}
         <input class="w3-input w3-border" type="text" name="Message" required>
       </div>
       <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
-    </form>  
+    </form>
   </div>
 
 <!-- End page content -->
@@ -163,7 +167,7 @@ function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
 }
- 
+
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
