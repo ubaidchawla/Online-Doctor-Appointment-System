@@ -12,14 +12,20 @@ body {font-size:16px;}
   color: #A52A2A !important;
   background-color: #fff !important;
 }
+.bug-text-red{
+  color: #A52A2A !important;
 
+}
 .input-container {
     display: -ms-flexbox; /* IE10 */
     display: flex;
     width: 100%;
     margin-bottom: 15px;
 }
-
+.bug-line-red{
+  width:50px;
+  border:5px solid #A52A2A;
+}
 .icon {
     padding: 10px;
     background: #A52A2A;
