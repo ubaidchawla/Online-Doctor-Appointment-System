@@ -26,6 +26,34 @@ body {font-size:16px;}
   width:50px;
   border:5px solid #A52A2A;
 }
+.bug-page-content{
+  margin-left:340px;
+  margin-right:40px;
+}
+.bug-header-container{
+  margin-top:80px;
+}
+.bug-main-img{
+  width:100%;
+}
+.bug-img.modal{
+  padding:0;
+}
+.bug-main-container{
+  margin-top:75px;
+}
+.bug-form{
+  max-width:500px;
+  padding:3%;
+  margin:auto;
+}
+.bug-select{
+  width:100%;
+  color:white;
+  background:#AF2A2A;
+  padding:4%;
+  
+}
 .icon {
     padding: 10px;
     background: #A52A2A;

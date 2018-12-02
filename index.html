@@ -36,10 +36,10 @@
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
+<div class="w3-main bug-page-content">
 
   <!-- Header -->
-  <div class="w3-container" style="margin-top:80px" id="showcase">
+  <div class="w3-container bug-header-container" id="showcase">
     <h1 class="w3-jumbo"><b>Improving healthcare</b></h1>
     <h1 class="w3-xxxlarge bug-text-red"><b>Cooperating hospitals.</b></h1>
     <hr class="w3-round bug-line-red">
@@ -48,20 +48,20 @@
   <!-- Photo grid (modal) -->
   <div class="w3-row-padding">
     <div class="w3-half">
-      <img src="src/images/1.jpg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
-      <img src="src/images/2.jpg" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian design">
+      <img src="src/images/1.jpg" class="bug-main-img" onclick="onClick(this)" alt="Concrete meets bricks">
+      <img src="src/images/2.jpg" class="bug-main-img" onclick="onClick(this)" alt="Light, white and tight scandinavian design">
 
     </div>
 
     <div class="w3-half">
-      <img src="src/images/3.jpg" style="width:100%" onclick="onClick(this)" alt="Windows for the atrium">
-      <img src="src/images/4.jpg" style="width:100%" onclick="onClick(this)" alt="Bedroom and office in one space">
+      <img src="src/images/3.jpg" class="bug-main-img" onclick="onClick(this)" alt="Windows for the atrium">
+      <img src="src/images/4.jpg" class="bug-main-img" onclick="onClick(this)" alt="Bedroom and office in one space">
 
     </div>
   </div>
 
   <!-- Modal for full size images on click-->
-  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+  <div id="modal01" class="w3-modal w3-black bug-img-modal" onclick="this.style.display='none'">
     <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
     <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
       <img id="img01" class="w3-image">
@@ -70,7 +70,7 @@
   </div>
 
   <!-- Services -->
-  <div class="w3-container" id="services" style="margin-top:75px">
+  <div class="w3-container" id="services" class="bug-main-container">
     <h1 class="w3-xxxlarge bug-text-red"><b>Services we provide.</b></h1>
     <hr class="w3-round bug-line-red">
     <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
@@ -81,7 +81,7 @@
   </div>
 
   <!-- Designers -->
-  <div class="w3-container" id="designers" style="margin-top:75px">
+  <div class="w3-container" id="designers" class="bug-main-container">
     <h1 class="w3-xxxlarge bug-text-red"><b>Doctors.</b></h1>
     <hr class="w3-round bug-line-red">
     <p>The best team in the world.</p>
@@ -96,7 +96,7 @@
   <div class="w3-row-padding w3-grayscale">
     <div class="w3-col m4 w3-margin-bottom">
       <div class="w3-light-grey">
-        <img src="src/images/d1.jpg" alt="John" style="width:100%">
+        <img src="src/images/d1.jpg" alt="John" class="bug-main-img">
         <div class="w3-container">
           <h3>Dr House</h3>
           <p class="w3-opacity">Cardiologist</p>
@@ -106,7 +106,7 @@
     </div>
     <div class="w3-col m4 w3-margin-bottom">
       <div class="w3-light-grey">
-        <img src="src/images/d2.jpg" alt="Jane" style="width:100%">
+        <img src="src/images/d2.jpg" alt="Jane" class="bug-main-img">
         <div class="w3-container">
           <h3>Dr Bakhtawar</h3>
           <p class="w3-opacity">Neurosurgeon</p>
@@ -116,7 +116,7 @@
     </div>
     <div class="w3-col m4 w3-margin-bottom">
       <div class="w3-light-grey">
-        <img src="src/images/d3.jpg" alt="Mike" style="width:100%">
+        <img src="src/images/d3.jpg" alt="Mike" class="bug-main-img">
         <div class="w3-container">
           <h3>Dr Mike Ross</h3>
           <p class="w3-opacity">Gynecologist</p>
@@ -129,7 +129,7 @@
   <!-- Packages / Pricing Tables -->
 
   <!-- Contact -->
-  <div class="w3-container" id="contact" style="margin-top:75px">
+  <div class="w3-container" id="contact" class="bug-main-container">
     <h1 class="w3-xxxlarge bug-text-red"><b>Your experience.</b></h1>
     <hr class="w3-round bug-line-red">
     <p>Tell us about your last appointment so that we could improve our customer care services</p>
@@ -160,7 +160,7 @@
           <h2 class="modal-title">Doctor Register Form</h2>
         </div>
         <div class="modal-body">
-          <form style="max-width:500px;padding:3%;margin:auto;">
+          <form class="bug-form">
 
               <div class="input-container">
               <i class="fa fa-user icon"></i>
@@ -176,7 +176,7 @@
 
 
             <div class="form-group">
-              <select style="width:100%;color:white;background:#AF2A2A;padding:4%;">
+              <select class="bug-select">
                 <option>Gender</option>
                 <option>Male</option>
                 <option>Female</option>
