@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Onlineheathcare.org</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="src/css/custom.css">
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse bug-red w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Online<br>Healthcare</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">My profile</a>
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Appointments</a>
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">List of doctors</a>
+    <button type="button" class="btn bug-red-inverted" data-toggle="modal" data-target="#registerdoctor">Register as a Doctor</button>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large bug-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button bug-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Online healthcare</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main bug-page-content">
+
+  <!-- Header -->
+  <div class="w3-container bug-header-container" id="showcase">
+    <h1 class="w3-jumbo"><b>Improving healthcare</b></h1>
+    <h1 class="w3-xxxlarge bug-text-red"><b>Cooperating hospitals.</b></h1>
+    <hr class="w3-round bug-line-red">
+  </div>
+
+  <!-- Photo grid (modal) -->
+
+      
+  <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="well well-sm">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <img src="man.png" alt="" class="img-rounded img-responsive" />
+                        </div>
+                        <div class="col-sm-6 col-md-8">
+                            <h4>
+                                Bhaumik Patel</h4>
+                            <small><cite title="San Francisco, USA">San Francisco, USA <i class="glyphicon glyphicon-map-marker">
+                            </i></cite></small>
+                            <p>
+                                <i class="glyphicon glyphicon-envelope"></i>email@example.com
+                                <br />
+                                <i class="glyphicon glyphicon-gift"></i>June 02, 1988</p>
+                            <!-- Split button -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+      
+    <div class="container">
+            <table class="table">
+              <tr>
+                  <th>Patient ID</th>
+                  <th>Patient Name</th>
+                  <th>Age</th>
+                  <th>Blood Group</th>
+                  <th>Loyalty Points</th>
+              </tr>
+              <tr>
+                  <td>1</td>
+                  <td>Wheat</td>
+                  <td>Good</td>
+                  <td>200 Bags</td>
+                  <td>50</td>>
+              </tr>
+
+            </table>
+            </div><br /><br />  
+
+      <!-- Modal content-->
+      
+<!-- End page content -->
+</div>
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Onlineheathcare.org</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="src/css/custom.css">
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse bug-red w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Online<br>Healthcare</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">My profile</a>
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Appointments</a>
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">List of doctors</a>
+    <button type="button" class="btn bug-red-inverted" data-toggle="modal" data-target="#registerdoctor">Register as a Doctor</button>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large bug-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button bug-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Online healthcare</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main bug-page-content">
+
+  <!-- Header -->
+  <div class="w3-container bug-header-container" id="showcase">
+    <h1 class="w3-jumbo"><b>Improving healthcare</b></h1>
+    <h1 class="w3-xxxlarge bug-text-red"><b>Cooperating hospitals.</b></h1>
+    <hr class="w3-round bug-line-red">
+  </div>
+
+  <!-- Photo grid (modal) -->
+
+      
+      <div class="container">
+            <div class="row">
+              <div class="col-md-3 img " style="margin-left:6%">
+                <img src="doc.png"  alt="" class="img-rounded">
+              </div>
+              <div class="col-md-3 details" style="margin-left:4%">
+                <blockquote>
+                  <h5>Dr Ubaid-ur-Rehman</h5>
+                  <small><cite title="Source Title">Fasilabad, Pakistan  <i class="icon-map-marker"></i></cite></small>
+                </blockquote>
+                <p>
+                  hafizubaidchawala@hotmail.com <br>
+                  Eye specilist, FRCPS <br>
+                  July 4, 1996
+                </p>
+              </div>
+            </div>
+          </div>
+      
+      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <img src="man.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <span class="w3-right w3-opacity">16 min</span>
+        <h4>Jane Doe</h4><br>
+        <hr class="w3-clear">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+      </div>  
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title">Doctor Register Form</h2>
+        </div>
+        <div class="modal-body">
+          <form class="bug-form">
+
+              <div class="input-container">
+              <i class="fa fa-user icon"></i>
+              <input class="input-field" type="text" placeholder="Name" name="name">
+            </div>
+
+
+            <div class="input-container">
+              <i class="fa fa-user icon"></i>
+              <input class="input-field" type="text" placeholder="Username" name="usernam">
+            </div>
+
+
+
+            <div class="form-group">
+              <select class="bug-select">
+                <option>Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>`
+               </select>
+            </div>
+
+
+            <div class="input-container">
+              <i class="fa fa-envelope icon"></i>
+              <input class="input-field" type="text" placeholder="Email" name="email">
+            </div>
+
+            <div class="input-container">
+              <i class="fa fa-briefcase icon"></i>
+              <input class="input-field" type="text" placeholder="Designation" name="Designation">
+            </div>
+
+            <div class="input-container">
+              <i class="fa fa-user-md icon"></i>
+              <input class="input-field" type="text" placeholder="Speciality" name="Speciality">
+            </div>
+
+            <div class="input-container">
+              <i class="fa fa-phone icon"></i>
+              <input class="input-field" type="number" placeholder="Phone number" name="Phone number">
+            </div>
+
+            <div class="input-container">
+              <i class="fa fa-key icon"></i>
+              <input class="input-field" type="password" placeholder="Password" name="psw">
+            </div>
+
+
+            <div class="input-container">
+              <i class="fa fa-key icon"></i>
+              <input class="input-field" type="password" placeholder="Retype Password" name="psw">
+            </div>
+
+
+            <button type="submit" class="btn">Register</button>
+          </form>          </div>
+
+      </div>
+
+    </div>
+  
+
+<!-- End page content -->
+</div>
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
