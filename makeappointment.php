@@ -9,68 +9,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
 
-.input-container {
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.icon {
-    padding: 10px;
-    background: #A52A2A;
-    color: white;
-    min-width: 50px;
-    text-align: center;
-}
-
-.input-field {
-    width: 100%;
-    padding: 10px;
-    outline: none;
-}
-
-.dropdown {
-display: -ms-flexbox; /* IE10 */
-    display: flex;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-
-. {
-display: -ms-flexbox; /* IE10 */
-    display: flex;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.input-field:focus {
-    border: 2px solid #A52A2A;
-}
-
-/* Set a style for the submit button */
-.btn {
-    background-color: #A52A2A;
-    color: white;
-    padding: 15px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-}
-
-.btn:hover {
-    opacity: 1;
-}
-</style>
 </head>
-
 <body style="background-color:#B6B6B4;">
+<?php
+$con = mysqli_connect("localhost", "root","", "ilaaj");
+
+	$error='';
+
+	
+		$patient_name = ((isset($_POST['patient_name']))?$_POST['patient_name']:'');
+		$age = ((isset($_POST['age']))?$_POST['age']:'');
+		$date = ((isset($_POST['date']))?$_POST['date']:'');
+		$time_from = ((isset($_POST['time_from']))?$_POST['time_from']:'');
+		$time_to = ((isset($_POST['time_to']))?$_POST['time_to']:'');
+		$phone_number = ((isset($_POST['phone_number']))?$_POST['phone_number']:'');
+		$appointment_id= ((isset($_POST['appointment_id']))?$_POST['appointment_id']:'');
+		$speciality_id = ((isset($_POST['speciality_id']))?$_POST['speciality_id']:'');
+		$doctor_id = ((isset($_POST['doctor_id']))?$_POST['doctor_id']:'');
+		$patient_id = ((isset($_POST['patient_id']))?$_POST['patient_id']:'');
+	
+		
+                                                                           
+mysqli_query($con,"CREATE TABLE appointment(patient_name varchar(25),age int(25),date date,
+time_from time,time_to time,phone_number int(15),
+appointment_id int(5) NOT NULL, speciality_id int(5),doctor_id int(10),patient_id int(7),
+ PRIMARY KEY(appointment_id),FOREIGN KEY(doctor_id) REFERENCES doctor(doctor_id),
+ FOREIGN KEY(patient_id) REFERENCES patient(patient_id))");
+		
+		
+		
+		if(isset($_POST['doctor_id'])){
+				
+				$sql= mysqli_query($con, "INSERT INTO appointment(patient_name, age, date,time_from, time_to,phone_number,appointment_id,speciality_id,doctor_id, patient_id )
+				VALUES('$patient_name','$age','$time_from','$time_to' ,'$phonr_number' ,'$appointment_id' ,'$speciality_id' ,'$doctor_id' , '$patient_id'");
+				;
+			}
+		
+		
+?>
+
 <form style="max-width:500px;padding:3%;margin:auto;">
   <h2>Appointment Form</h2>
 

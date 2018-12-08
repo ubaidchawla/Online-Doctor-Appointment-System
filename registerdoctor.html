@@ -9,65 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+<link rel="stylesheet" href="src/css/custom.css">
 
-.input-container {
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.icon {
-    padding: 10px;
-    background: #A52A2A;
-    color: white;
-    min-width: 50px;
-    text-align: center;
-}
-
-.input-field {
-    width: 100%;
-    padding: 10px;
-    outline: none;
-}
-
-.dropdown {
-display: -ms-flexbox; /* IE10 */
-    display: flex;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-
-. {
-display: -ms-flexbox; /* IE10 */
-    display: flex;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.input-field:focus {
-    border: 2px solid #A52A2A;
-}
-
-/* Set a style for the submit button */
-.btn {
-    background-color: #A52A2A;
-    color: white;
-    padding: 15px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-}
-
-.btn:hover {
-    opacity: 1;
-}
-</style>
 </head>
 
 <body style="background-color:#B6B6B4;">
@@ -82,9 +25,15 @@ display: -ms-flexbox; /* IE10 */
 
   <div class="input-container">
     <i class="fa fa-user icon"></i>
-    <input class="input-field" type="text" placeholder="Username" name="usernam">
+    <input class="input-field" type="text" placeholder="Username" name="username">
   </div>
 
+
+  
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" placeholder="password" name="password">
+  </div>
 
 
   <div class="form-group">
@@ -104,30 +53,30 @@ display: -ms-flexbox; /* IE10 */
 
   <div class="input-container">
     <i class="fa fa-briefcase icon"></i>
-    <input class="input-field" type="text" placeholder="Designation" name="Designation">
+    <input class="input-field" type="number" placeholder="Doctor_id" name="doctor_id">
   </div>
 
   <div class="input-container">
     <i class="fa fa-user-md icon"></i>
-    <input class="input-field" type="text" placeholder="Speciality" name="Speciality">
+    <input class="input-field" type="text" placeholder="degree_name" name="degree_name">
   </div>
 
   <div class="input-container">
     <i class="fa fa-phone icon"></i>
-    <input class="input-field" type="number" placeholder="Phone number" name="Phone number">
+    <input class="input-field" type="number" placeholder="degree_id" name="degree_id">
   </div>
 
   <div class="input-container">
     <i class="fa fa-key icon"></i>
-    <input class="input-field" type="password" placeholder="Password" name="psw">
+    <input class="input-field" type="number" placeholder="speciality_id" name="speciality_id">
   </div>
 
 
   <div class="input-container">
     <i class="fa fa-key icon"></i>
-    <input class="input-field" type="password" placeholder="Retype Password" name="psw">
+    <input class="input-field" type="number" placeholder="Speciality_name" name="speciality_name">
   </div>
-
+  
 
   <button type="submit" class="btn">Register</button>
 </form>
