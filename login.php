@@ -28,7 +28,7 @@ $stmt->store_result();
 if($stmt->fetch()) //fetching the contents of the row
         {
           $_SESSION['login_user'] = $username; // Initializing Session
-          header("location:profile.php"); // Redirecting To Profile Page
+          header("location:index.php"); // Redirecting To Profile Page
         }
 else {
        $error = "Username or Password is invalid";
@@ -37,7 +37,7 @@ mysqli_close($conn); // Closing Connection
 }
 } // Includes Login Script
 if(isset($_SESSION['login_user'])){
-header("location:profile.php"); // Redirecting To Profile Page
+header("location:index.php"); // Redirecting To Profile Page
 }
 ?> 
  <!DOCTYPE html>
@@ -113,7 +113,7 @@ header("location:profile.php"); // Redirecting To Profile Page
 					</div>
 				</form>
 
-				<div class="login100-more" style="background-image: url('src/images/bg-03.jpg');"></div>
+				<div class="login100-more"><img src="src/images/bg-02.jpg" height="100%" width="100%"></div>
 			</div>
 		</div>
 	</div>
