@@ -16,13 +16,12 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $gender=$_POST['gender'];
 $email=$_POST['email'];
+$city_name=$_POST['city_name'];
 $doctor_id = $_POST['doctor_id'];
 $degree_name=$_POST['degree_name'];
-$degree_id = $_POST['degree_id'];
-$speciality_id = $_POST['speciality_id'];
 $speciality_name=$_POST['speciality_name'];
-$register_query = "INSERT INTO `doctor` (`name`, `username`, `password`, `gender`, `email`, `doctor_id`, `degree_name`, `degree_id`, `speciality_id`, `speciality_name`)
- VALUES ('$name','$username','$password','$gender','$email','$doctor_id' ,'$degree_name','$degree_id','$speciality_id','$speciality_name')";
+$register_query = "INSERT INTO `doctor` (`name`, `username`, `password`, `gender`, `email`, `city_name`,`doctor_id`, `degree_name`, `speciality_name`)
+ VALUES ('$name','$username','$password','$gender','$email','$city_name','$doctor_id' ,'$degree_name','$speciality_name')";
 try{
 $register_result = mysqli_query($conn, $register_query);
 if($register_result){
@@ -83,6 +82,24 @@ echo("error".$ex->getMessage());
     <input class="input-field" type="email" placeholder="Email" name="email">
   </div>
 
+  
+  <div class="input-container">
+    <i class="fa fa-building icon"></i>
+    <select name="city_name" style="padding: 10px; width:100%;">
+      <option>CITY</option>
+        <?php
+          $city = mysqli_query($conn, "SELECT * FROM city");
+          while($cities = mysqli_fetch_assoc($city))
+          {
+        ?>
+          <option><?=$cities['name'];?></option>
+        <?php
+          }
+        ?>  
+    </select>
+  </div>
+  
+  
   <div class="input-container">
     <i class="fa fa-briefcase icon"></i>
     <input class="input-field" type="number" placeholder="Doctor_id" name="doctor_id">
@@ -93,23 +110,24 @@ echo("error".$ex->getMessage());
     <input class="input-field" type="text" placeholder="degree_name" name="degree_name">
   </div>
 
-  <div class="input-container">
+  <div class="input-container" >
     <i class="fa fa-briefcase icon"></i>
-    <input class="input-field" type="number" placeholder="degree_id" name="degree_id">
-  </div>
-
-  <div class="input-container">
-    <i class="fa fa-briefcase icon"></i>
-    <input class="input-field" type="text" placeholder="speciality_id" name="speciality_id">
-  </div>
-
-
-  <div class="input-container">
-    <i class="fa fa-briefcase icon"></i>
-    <input class="input-field" type="text" placeholder="Speciality_name" name="speciality_name">
+    <select name="speciality_name" style="padding: 10px; width:100%;">
+      <option>speciality</option>
+        <?php
+          $speciality = mysqli_query($conn, "SELECT * FROM speciality");
+          while($specialities = mysqli_fetch_assoc($speciality))
+          {
+        ?>
+          <option><?=$specialities['speciality_name'];?></option>
+        <?php
+          }
+        ?>  
+     </select>
   </div>
   
-
+  
+  
   <button type="submit" name="submit" class="btn">Register</button>
 </form>
 

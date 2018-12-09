@@ -8,10 +8,10 @@
           <h2 class="modal-title">LIST OF DOCTORS IN PAKISTAN</h2>
         </div>
         <div class="modal-body">
-  <form style="max-width:500px;padding:3%;margin:auto;" action="" method="post">
+  <form style="max-width:500px;padding:3%;margin:auto;" method="get"action="doctorstable.php">
   <h2>Search for the doctor</h2>
 
-    <div class="input-container" >
+ <div class="input-container" >
     <i class="fa fa-briefcase icon"></i>
     <select name="speciality_name" style="padding: 10px; width:100%;">
       <option>speciality</option>
@@ -32,7 +32,7 @@
     <select name="city_name" style="padding: 10px; width:100%;">
       <option>CITY</option>
         <?php
-          $city = mysqli_query($conn, "SELECT * FROM cities");
+          $city = mysqli_query($conn, "SELECT * FROM city");
           while($cities = mysqli_fetch_assoc($city))
           {
         ?>

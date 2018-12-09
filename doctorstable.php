@@ -1,4 +1,9 @@
-<?php include 'header.php';?>
+<?php include 'header.php';
+if(isset($_GET['city_name']))
+  {
+    $search=$_GET['city_name'];
+    $search1=$_GET['speciality_name'];
+?>
 
 <div class="container">
   <h2>AVAILABLE DOCTORS FOR YOUR SEARCH</h2>
@@ -9,22 +14,25 @@
       <tr>
         <th onclick="sortTable(0)">DOCTOR NAME</th>
         <th onclick="sortTable(1)">GENDER</th>
-        <th onclick="sortTable(2)">DEGREE NAME</th>
-        <th onclick="sortTable(3)">EMAIL</th>
+        <th onclick="sortTable(2)">CITY</th>        
+        <th onclick="sortTable(3)">SPECIALITY NAME</th>
+        <th onclick="sortTable(4)">EMAIL</th>
         <th>ACTION</th>
       </tr>
     </thead>
     <tbody id="myTable">
       <?php
           $cnt = 0;
-          $doctor = mysqli_query($conn, "SELECT * FROM doctor");
+          $doctor = mysqli_query($conn, "SELECT * FROM doctor where city_name='$search' AND speciality_name='$search1'");
           while($doctors = mysqli_fetch_assoc($doctor)){
           $cnt++;
+
         ?>
           <tr>
             <td><?=$doctors['name'];?></td>
             <td><?=$doctors['gender'];?></td>
-            <td><?=$doctors['degree_name'];?></td>
+            <td><?=$doctors['city_name'];?></td>
+            <td><?=$doctors['speciality_name'];?></td>
             <td><?=$doctors['email'];?></td>
             <td><button type="button" class="btn bug-red" data-toggle="modal" data-target="#appoint">
     BOOK</button></td>
@@ -105,4 +113,6 @@ function sortTable(n) {
   }
 }
 </script>
-<?php include 'footer.php'; ?>
+<?php 
+}
+include 'footer.php'; ?>

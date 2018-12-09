@@ -21,8 +21,11 @@ $appointment_id =$_POST['appointment_id'];
 $speciality_id= $_POST['speciality_id'];
 $doctor_id = $_POST['doctor_id'];
 $patient_id=$_POST['patient_id'];
-$register_query = "INSERT INTO `appointment` (`patient_name`, `age`, `date`, `time_from`, `time_to`, `phone_number`, `appointment_id`, `speciality_id`, `doctor_id`, `patient_id`)
- VALUES ('$patient_name','$age','$date','$time_from','$time_to','$phone_number' ,'$appointment_id','$speciality_id','$doctor_id','$patient_id')";
+$register_query = "INSERT INTO `appointment` (`patient_name`, `age`, `date`, `time_from`, `time_to`, `phone_number`, 
+`appointment_id`, `speciality_id`, `doctor_id`, `patient_id`)
+ VALUES ('$patient_name','$age','$date','$time_from','$time_to','$phone_number' ,'$appointment_id','$speciality_id',
+ '$doctor_id','$patient_id')";
+
 try{
 $register_result = mysqli_query($conn, $register_query);
 if($register_result){
@@ -117,7 +120,6 @@ echo("error".$ex->getMessage());
   
   <button type="submit" name="submit" class="btn">Request an appointment</button>
 </form>
-
 
       </div>
 

@@ -48,13 +48,16 @@ header("location: index.php"); // Redirecting To Home Page
 	<a href="appointmentlist.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Appointments</a>
     <a href="#" onclick="w3_close()" data-toggle="modal" data-target="#listdoctors" 
     class="w3-bar-item w3-button w3-hover-white" style="color: white;">List of doctors</a>
-    <?php if($query) : ?>
+    <!-- <?php if($query) : ?>
       <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">LogOut</a>
     
 <?php else: ?>
     <button type="button" class="btn bug-red-inverted" data-toggle="modal" data-target="#registerdoctor">
     Register as a Doctor</button>
-  <?php endif; ?>
+  <?php endif; ?> -->
+      <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">LogOut</a>
+  <button type="button" class="btn bug-red-inverted" data-toggle="modal" data-target="#registerdoctor">
+    Register as a Doctor</button>
   </div>
 </nav>
 

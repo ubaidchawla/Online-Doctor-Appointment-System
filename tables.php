@@ -5,26 +5,27 @@ $password = "";
 
 $con = mysqli_connect($servername, $username, $password,"ilaaj");
  
-mysqli_query($con,"CREATE TABLE registeration_form(form_id int(10), email varchar(50), occupation varchar(20),
-username varchar(20), password varchar(20),PRIMARY KEY(form_id),UNIQUE(email))");
 
-mysqli_query($con,"CREATE TABLE doctor(name varchar(25),username varchar(25),password varchar(25),gender varchar(25),email varchar(25)
-,doctor_id int(10),degree_name varchar(15),degree_id int(5),
-speciality_id int(7), speciality_name varchar(15),PRIMARY KEY(doctor_id))");
+	
+mysqli_query($con,"CREATE TABLE city(name varchar(25),city_id int(25),PRIMARY KEY(city_id))");
 
 
+mysqli_query($con,"CREATE TABLE speciality(speciality_name varchar(25),speciality_id int(25),PRIMARY KEY(speciality_id))");
 
 
-mysqli_query($con,"CREATE TABLE patient(name varchar(25),username varchar(25),password varchar(25),email varchar(25),
+
+mysqli_query($con, "CREATE TABLE doctor(name varchar(25),username varchar(25),password varchar(25),gender varchar(25),email varchar(25)
+,city_name varchar(25),doctor_id int(25),
+degree_name varchar(25),speciality_name varchar(25), PRIMARY KEY(doctor_id))");	
+
+
+mysqli_query($con,"CREATE TABLE patient(name varchar(25),username varchar(25),password varchar(25),email varchar(25),city varchar(25),city_id int(25),
 gender varchar(25),age int(5),height int(25),
 blood_type varchar(25), patient_id int(10), weight int(5),
-  allergy varchar(25), allergy_type varchar(25),
+  allergy int(1), allergy_type varchar(25),
  diabetic int(1), 
- PRIMARY KEY(patient_id))"); 
+ PRIMARY KEY(patient_id), FOREIGN KEY(city_id) REFERENCES city(city_id))"); 
 
-mysqli_query($con,"CREATE TABLE schedule(schedule_id int(7), doctor_id int(7) NOT NULL, schedule_day varchar(25), patient_id int(7),
- schedule_time_from varchar(25), schedule_tme_to varchar(25),PRIMARY KEY(schedule_id), FOREIGN KEY(doctor_id) REFERENCES doctor(doctor_id))");
-                                                                           
 mysqli_query($con,"CREATE TABLE appointment(patient_name varchar(25),age int(25),date date,
 time_from time,time_to time,phone_number int(15),
 appointment_id int(5) NOT NULL, speciality_id int(5),doctor_id int(10),patient_id int(7),
