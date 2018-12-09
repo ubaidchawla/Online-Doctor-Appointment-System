@@ -43,7 +43,7 @@ header("location:index.php"); // Redirecting To Profile Page
  <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V17</title>
+	<title>ILAAJ - LOGIN</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -67,6 +67,8 @@ header("location:index.php"); // Redirecting To Profile Page
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="src/css/util.css">
 	<link rel="stylesheet" type="text/css" href="src/css/main.css">
+	<link rel="stylesheet" type="text/css" href="src/css/custom.css">
+
 <!--===============================================================================================-->
 </head>
 <body>
@@ -107,9 +109,10 @@ header("location:index.php"); // Redirecting To Profile Page
 					</div>
 
 					<div class="w-full text-center">
-						<a href="#" class="txt3">
-							Sign Up
-						</a>
+						
+						 <button type="button" class="btn bug-red" data-toggle="modal" data-target="#registerpatient">Sign Up
+						 </button>
+
 					</div>
 				</form>
 
@@ -118,8 +121,10 @@ header("location:index.php"); // Redirecting To Profile Page
 		</div>
 	</div>
 	
-	
 
+	<?php
+ include 'signup.php';
+?>
 	<div id="dropDownSelect1"></div>
 	
 <!--===============================================================================================-->
