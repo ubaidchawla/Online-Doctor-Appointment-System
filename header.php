@@ -41,17 +41,20 @@ header("location: index.php"); // Redirecting To Home Page
     <h3 class="w3-padding-64"><b>Online<br>Healthcare</b></h3>
   </div>
   <div class="w3-bar-block">
-    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-    <span><a href="profile.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><?php echo $login_session; ?></a></span>
-	<?php if($query) : ?>
-    <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">LogOut</a>
-<?php endif; ?>
+    <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+    <span><a href="profile.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><?php echo $login_session; ?></a></span>
+	
 		
-	<a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Appointments</a>
-    <a href="#doctorslist.html" onclick="w3_close()" data-toggle="modal" data-target="#listdoctors" 
+	<a href="appointmentlist.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Appointments</a>
+    <a href="#" onclick="w3_close()" data-toggle="modal" data-target="#listdoctors" 
     class="w3-bar-item w3-button w3-hover-white" style="color: white;">List of doctors</a>
+    <?php if($query) : ?>
+      <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">LogOut</a>
+    
+<?php else: ?>
     <button type="button" class="btn bug-red-inverted" data-toggle="modal" data-target="#registerdoctor">
     Register as a Doctor</button>
+  <?php endif; ?>
   </div>
 </nav>
 

@@ -1,4 +1,3 @@
-<!doctype html>
 <?php
  include 'database.php';
 
@@ -34,6 +33,7 @@ echo("error".$ex->getMessage());
 }
  
 ?>
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">

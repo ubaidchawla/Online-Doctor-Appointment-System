@@ -39,22 +39,21 @@ echo("error".$ex->getMessage());
 }
  
 ?>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="src/css/custom.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+<div class="modal fade" id="appoint" role="dialog">
+    <div class="modal-dialog">
 
-<body style="background-color:#B6B6B4;">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+            <h2>Patient Register Form</h2>
 
-	<form style="max-width:500px;padding:3%;margin:auto;" action="" method="post">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          
+ <form style="max-width:500px;padding:3%;margin:auto;" action="" method="post">
 
-	<h2>Appointment Form</h2>
+  <h2>Appointment Form</h2>
 
     <div class="input-container">
     <i class="fa fa-user icon"></i>
@@ -119,5 +118,9 @@ echo("error".$ex->getMessage());
   <button type="submit" name="submit" class="btn">Request an appointment</button>
 </form>
 
-</body>
-</html>
+
+      </div>
+
+    </div>
+  </div>
+</div>
