@@ -7,7 +7,6 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $email=$_POST['email'];
 $city=$_POST['city'];
-$city_id=$_POST['city_id'];
 $gender=$_POST['gender'];
 $age = $_POST['age'];
 $height=$_POST['height'];
@@ -17,8 +16,9 @@ $weight=$_POST['weight'];
 $allergy=$_POST['allergy'];
 $allergy_type=$_POST['allergy_type'];
 $diabetic=$_POST['diabetic'];
-$register_query= "INSERT INTO `patient` (`name`, `username`, `password`, `email`,`city`,`city_id`, `gender`, `age`, `height`, `blood_type`, `patient_id`, `weight`, `allergy`, `allergy_type`, `diabetic`)
- VALUES ('$name','$username','$password','$email','$city','$city_id','$gender','$age' ,'$height','$blood_type','$patient_id','$weight','$allergy','$allergy_type','$diabetic')";
+$register_query= "INSERT INTO patient(name, username,password,email,city,gender,age,height ,blood_type, patient_id, weight,allergy,allergy_type,diabetic )
+VALUES ('$name','$username','$password','$email','$city','$gender','$age' ,'$height','$blood_type','$patient_id',
+'$weight','$allergy','$allergy_type','$diabetic')";
 
 try{
 $register_result = mysqli_query($conn, $register_query);
@@ -148,7 +148,6 @@ input:checked + .slider1:before {
         <div class="modal-body">
           
  <form style="max-width:500px;padding:3%;margin:auto;" action="" method="post">
-  <h2>Patient Register Form</h2>
 
     <div class="input-container">
     <i class="fa fa-user icon"></i>
@@ -172,20 +171,22 @@ input:checked + .slider1:before {
   </div>
 
   
-  <div class="input-container">
-    <i class="fa fa-envelope icon"></i>
-    <input class="input-field" type="text" placeholder="City" name="city">
+   <div class="input-container">
+    <i class="fa fa-building icon"></i>
+    <select name="city_name" style="padding: 10px; width:100%;">
+      <option>CITY</option>
+        <?php
+          $city = mysqli_query($conn, "SELECT * FROM city");
+          while($cities = mysqli_fetch_assoc($city))
+          {
+        ?>
+          <option><?=$cities['name'];?></option>
+        <?php
+          }
+        ?>  
+    </select>
   </div>
-  
-  
-  <div class="input-container">
-    <i class="fa fa-envelope icon"></i>
-    <input class="input-field" type="number" placeholder="city_id" name="city_id">
-  </div>
-
-
-
-<div class="form-group">
+  <div class="form-group">
     <select style="width:100%;color:white;background:#AF2A2A;padding:5%;" name="gender">
       <option>Gender</option>
     <option value="Male">Male</option>
@@ -209,7 +210,17 @@ input:checked + .slider1:before {
 
   <div class="input-container">
     <i class="fa fa-tint icon"></i>
-    <input class="input-field" type="text" placeholder="blood_type" name="blood_type">
+    <select name="blood_type" style="padding: 10px; width:100%;">
+        <option>BLOOD GROUP</option>
+        <option id='O-positive'>O-positive</option>
+        <option id='O-negative'>O-negative</option>
+        <option id='A-positive'>A-positive</option>
+        <option id='A-negative'>A-negative</option>
+        <option id='B-positive'>B-positive</option>
+        <option id='B-negative'>B-negative</option>
+        <option id='AB-positive'>AB-positive</option>
+        <option id='AB-negative'>AB-negative</option>
+    </select>
   </div>
 
 
@@ -227,7 +238,7 @@ input:checked + .slider1:before {
   
 
 <label class="switch"><p style="width:100%;color:black;padding:3%;">allergy</p>
-  <input type="checkbox" name="allergy" value="allergy">
+  <input type="checkbox" name="allergy" value="1">
   <span class="slider"></span>
 </label>
   
@@ -239,8 +250,8 @@ input:checked + .slider1:before {
   
   
   
-<label class="switch" name="allergy"><p style="width:100%;color:black;padding:3%;">Diabeties</p>
-  <input type="checkbox" name="diabetic" value="diabetic">
+<label class="switch"><p style="width:100%;color:black;padding:3%;">Diabeties</p>
+  <input type="checkbox" name="diabetic" value="1">
   <span class="slider1"></span>
 </label>
   

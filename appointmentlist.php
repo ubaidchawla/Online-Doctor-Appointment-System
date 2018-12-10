@@ -1,7 +1,10 @@
 <?php include 'header.php';?>
-
+<div class="w3-container bug-header-container" id="showcase">
+    <h1 class="w3-jumbo"><b>Improving healthcare</b></h1>
+    <h1 class="w3-xxxlarge bug-text-red"><b>Your Appointments.</b></h1>
+    <hr class="w3-round bug-line-red">
+  </div>
 <div class="container">
-  <h2>Here are your upcoming appointments</h2>
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br>
   <table class="table table-bordered table-striped" id="myTable">
@@ -10,19 +13,25 @@
         <th onclick="sortTable(0)">Patient Name</th>
         <th onclick="sortTable(1)">Appointment Date</th>
         <th onclick="sortTable(2)">Appointment Time</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody id="myTable">
       <?php
           $cnt = 0;
-          $appointment = mysqli_query($conn, "SELECT * FROM appointment");
+          $appointment = mysqli_query($conn, "SELECT * FROM appointment a join doctor d on d.doctor_id=a.doctor_id
+            WHERE patient_id = $login_session_id");
           while($appointments = mysqli_fetch_assoc($appointment)){
           $cnt++;
         ?>
           <tr>
-            <td><?=$appointments['patient_name'];?></td>
+            <td><?=$appointments['name'];?></td>
             <td><?=$appointments['date'];?></td>
             <td><?=$appointments['time_from'];?></td>
+            <td><span><a data-toggle="modal" data-target="#review"><i class="fa fa-star"></i></a></span>
+            </td>
+     
+
           </tr>
         <?php
   }
@@ -31,7 +40,9 @@
   </table>
 
 </div>
-<?php include 'listdoctors.php';?>
+<?php include 'listdoctors.php';
+  include 'review.php';
+?>
 <script>
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {

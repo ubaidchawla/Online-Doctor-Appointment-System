@@ -4,139 +4,133 @@
 
  include 'header.php';
 ?>
- <div id="profile">
-  <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b>
-  <b id="logout"><a href="logout.php">Log Out</a></b>
- </div>
+<style type="text/css">
+  
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
 
-   <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-            <div class="row">
-              <div class="col-md-6">
-              <div class="col-md-6 img ">
-                <img src="src/images/doc.png"  alt="" class="img-rounded">
-              </div>
-              <div class="col-md-6 details">
-                <blockquote>
-                  <h5>Dr <?php echo $login_session; ?></h5>
-                  <small><cite title="Source Title">Fasilabad, Pakistan  <i class="icon-map-marker"></i></cite></small>
-                </blockquote>
-                <p>
-                  hafizubaidchawala@outlook.com <br>
-                  Eye specialist, FRCPS <br>
-                  July 4, 1996
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-          <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="well well-sm">
-                <div class="row">
-                    <div class="col-xs-12 col-md-6">
-                        <div class="row rating-desc">
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="fa fa-star"></span>6
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 19%">
-                                        <span class="sr-only">19%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="fa fa-star"></span>5
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                        <span class="sr-only">80%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="fa fa-star"></span>4
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                        <span class="sr-only">60%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="fa fa-star"></span>3
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                        <span class="sr-only">40%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="fa fa-star"></span>2
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                        <span class="sr-only">20%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="fa fa-star"></span>1
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 15%">
-                                        <span class="sr-only">15%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
-                    </div>
-                    <div class="col-xs-12 col-md-6 text-center">
-                        <h1 class="rating-num">5.1</h1>
-                        <div class="rating">
-                            <span class="fa fa-star "></span>
-                            <span class="fa fa-star "></span>
-                            <span class="fa fa-star "></span>
-                            <span class="fa fa-star "></span>
-                            <span class="fa fa-star "></span>
-                            <span class="fa fa-star-half"></span>
-                        </div>
-                        <div>
-                            <span class="fa fa-user"></span>125888 total votes
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3"></div>
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+<!-- Header -->
+  <div class="w3-container bug-header-container" id="showcase">
+    <h1 class="w3-jumbo"><b>Improving healthcare</b></h1>
+    <h1 class="w3-xxxlarge bug-text-red"><b>PATIENT PROFILE.</b></h1>
+    <hr class="w3-round bug-line-red">
+  </div>
+ <div class="container">
+  <div class="row">
+    <div class="col-md-4" style="height:400px; border:1px solid grey;">
+      <img src="src/images/man.png" width="100%" height="100%">
     </div>
+    <div class="col-md-4" style="height:400px; border:1px solid grey;">
+      <h3>Name:</h3><p><?php echo $login_session; ?></p>
+      <h3>Age</h3><?php echo $login_session_age; ?>
+      <h3>Gender:</h3><?php echo $login_session_gender; ?>
+      <h3>Blood Type:</h3><?php echo $login_session_bloodtype; ?>
+      <h3>Email:</h3><?php echo $login_session_email; ?>
+
+    </div>
+
+    <div class="col-md-4" style="height:400px; border:1px solid grey;text-align: center; ">
+      <h1 style="font-size: 60px;">LOYALTY</h1>
+       <h2 style="font-size: 45px;">POINTS</h2>
+      <h1 style="font-size: 60px;">40</h1>
+      <h2 style="font-size: 45px;">REMAINING</h2>
+      <h2 style="font-size: 35px;">20</h2>
+
+
+    </div>
+    
+    </div>
+  </div>
+  <div class="container">
+  <h2>PATIENT RECORD TABLE</h2>
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>
+  <table class="table table-bordered table-striped" id="myTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">patient_id</th>
+        <th onclick="sortTable(1)">disease</th>
+        <th onclick="sortTable(2)">loyalty_points</th>
+    <th onclick="sortTable(3)">ongoing_treatment</th>
+    <th onclick="sortTable(4)">doctor_id</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <?php
+          $cnt = 0;
+          $record = mysqli_query($conn, "SELECT * FROM record
+            WHERE patient_id = $login_session_id");
+          while($records = mysqli_fetch_assoc($record)){
+          $cnt++;
+        ?>
+          <tr>
+            <td><?=$records['patient_id'];?></td>
+            <td><?=$records['disease'];?></td>
+            <td><?=$records['loyalty_points'];?></td>
+            <td><?=$records['ongoing_treatment'];?></td>
+            <td><?=$records['doctor_id'];?></td>
+          </tr>
+        <?php
+  }
+?>  
+    </tbody>
+  </table>
+
 </div>
 
-
-            </div>
-          </div>
-        </div>
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="src/images/man.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">16 min</span>
-        <h4>Jane Doe</h4><br>
-        <hr class="w3-clear">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-      </div>  
-
+<script type="text/javascript">
+  $.fn.stars = function() {
+    return $(this).each(function() {
+        // Get the value
+        var val = parseFloat($(this).html());
+        // Make sure that the value is in 0 - 5 range, multiply to get width
+        var size = Math.max(0, (Math.min(5, val))) * 16;
+        // Create stars holder
+        var $span = $('<span />').width(size);
+        // Replace the numerical value with stars
+        $(this).html($span);
+    });
+    val = Math.round(val * 4) / 4; /* To round to nearest quarter */
+val = Math.round(val * 2) / 2; /* To round to nearest half */
+}
+</script>
+<script type="text/javascript">
+  
+  $(function() {
+    $('span.stars').stars();
+});
+</script>
 <?php include 'footer.php';?>

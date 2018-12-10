@@ -31,10 +31,15 @@ time_from time,time_to time,phone_number int(15),
 appointment_id int(5) NOT NULL, speciality_id int(5),doctor_id int(10),patient_id int(7),
  PRIMARY KEY(appointment_id))");
 
-mysqli_query($con,"CREATE TABLE patient_history(patient_id int(7) NOT NULL, appointment_id int(5), disease varchar(20) ,
-ongoing_treatment varchar(20), doctor_id int(10), date_of_previous_treatment date, PRIMARY KEY(patient_id), FOREIGN KEY(patient_id) REFERENCES appointment(patient_id))"); 
+ 
+mysqli_query($con,"CREATE TABLE record(patient_id int(25),disease varchar(25),loyalty_points int(5),ongoing_treatment varchar(25),doctor_id int(25),
+PRIMARY KEY(patient_id))");
 
-                              
-mysqli_query($con,"CREATE TABLE review(review_id int(10), rating int(3), patient_id int(10), comment text(500),PRIMARY KEY(review_id),FOREIGN KEY(patient_id) REFERENCES patient(patient_id))");
+
+     
+mysqli_query($con,"CREATE TABLE review(review_id int(10) NOT NULL AUTO_INCREMENT, rating int(1), patient_id int(10),doctor_id int(25),
+ comment varchar(500),PRIMARY KEY(review_id),FOREIGN KEY(patient_id) REFERENCES patient(patient_id),FOREIGN KEY(doctor_id) REFERENCES doctor(doctor_id))");
+
+
 
 ?>

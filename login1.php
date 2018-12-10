@@ -16,7 +16,7 @@ $password = $_POST['password'];
 $conn = mysqli_connect("localhost", "root", "", "ilaaj");
 
 // SQL query to fetch information of registerd users and finds user match.
-$query = "SELECT username, password from patient where username=? AND password=? LIMIT 1";
+$query = "SELECT username, password from doctor where username=? AND password=? LIMIT 1";
 
 // To protect MySQL injection for Security purpose
 $stmt = $conn->prepare($query);
@@ -28,7 +28,7 @@ $stmt->store_result();
 if($stmt->fetch()) //fetching the contents of the row
         {
           $_SESSION['login_user'] = $username; // Initializing Session
-          header("location:index.php"); // Redirecting To Profile Page
+          header("location:index1.php"); // Redirecting To Profile Page
         }
 else {
        $error = "Username or Password is invalid";
@@ -37,7 +37,7 @@ mysqli_close($conn); // Closing Connection
 }
 } // Includes Login Script
 if(isset($_SESSION['login_user'])){
-header("location:index.php"); // Redirecting To Profile Page
+header("location:index1.php"); // Redirecting To Profile Page
 }
 ?> 
  <!DOCTYPE html>
@@ -78,7 +78,7 @@ header("location:index.php"); // Redirecting To Profile Page
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" action="" method="post">
 					<span class="login100-form-title p-b-34">
-						Patient Login
+						Doctor Login
 					</span>
 					
 				
@@ -99,8 +99,8 @@ header("location:index.php"); // Redirecting To Profile Page
 					</div>
 
 					<div class="w-full text-center p-t-27 p-b-239">
-						<a href="login1.php" class="txt2">
-						SIGN IN AS A DOCTOR
+						<a href="login.php" class="txt2">
+						SIGN IN AS A PATIENT
 						</a>
 					</div>
 

@@ -1,55 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-
+<?php include 'header1.php';?>
+<!-- Header -->
+  <div class="w3-container bug-header-container" id="showcase">
+    <h1 class="w3-jumbo"><b>Improving healthcare</b></h1>
+    <h1 class="w3-xxxlarge bug-text-red"><b>Your Appointments.</b></h1>
+    <hr class="w3-round bug-line-red">
+  </div>
 <div class="container">
-  <h2>Filterable Table</h2>
-  <p>Type something in the input field to search the table for first names, last names or emails:</p>
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br>
   <table class="table table-bordered table-striped" id="myTable">
     <thead>
       <tr>
-        <th onclick="sortTable(0)">Name</th>
-        <th onclick="sortTable(1)">Lastname</th>
-        <th onclick="sortTable(2)">Email</th>
+        <th onclick="sortTable(0)">Patient Name</th>
+        <th onclick="sortTable(1)">Appointment Date</th>
+        <th onclick="sortTable(2)">Appointment Time</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody id="myTable">
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@mail.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@greatstuff.com</td>
-      </tr>
-      <tr>
-        <td>Anja</td>
-        <td>Ravendale</td>
-        <td>a_r@test.com</td>
-      </tr>
+      <?php
+          $cnt = 0;
+          $appointment = mysqli_query($conn, "SELECT * FROM appointment WHERE doctor_id = $login_session_id");
+          while($appointments = mysqli_fetch_assoc($appointment)){
+          $cnt++;
+        ?>
+          <tr>
+            <td><?=$appointments['patient_name'];?></td>
+            <td><?=$appointments['date'];?></td>
+            <td><?=$appointments['time_from'];?></td>
+            <td><button class="btn" data-toggle="modal" data-target="#record">Patient Record</button></td>
+          </tr>
+        <?php
+  }
+  include 'record.php';
+?>  
     </tbody>
   </table>
 
-  <p>Note that we start the search in tbody, to prevent filtering the table headers.</p>
 </div>
-
+<?php include 'listdoctors.php';?>
 <script>
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {
@@ -116,5 +105,4 @@ function sortTable(n) {
   }
 }
 </script>
-</body>
-</html>
+<?php include 'footer.php'; ?>

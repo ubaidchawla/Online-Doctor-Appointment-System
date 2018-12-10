@@ -16,7 +16,7 @@ $password = $_POST['password'];
 $conn = mysqli_connect("localhost", "root", "", "ilaaj");
 
 // SQL query to fetch information of registerd users and finds user match.
-$query = "SELECT username, password from patient where username=? AND password=? LIMIT 1";
+$query = "SELECT username, password from doctor where username=? AND password=? LIMIT 1";
 
 // To protect MySQL injection for Security purpose
 $stmt = $conn->prepare($query);
@@ -78,7 +78,7 @@ header("location:index.php"); // Redirecting To Profile Page
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" action="" method="post">
 					<span class="login100-form-title p-b-34">
-						Patient Login
+						Account Login
 					</span>
 					
 				
@@ -99,8 +99,12 @@ header("location:index.php"); // Redirecting To Profile Page
 					</div>
 
 					<div class="w-full text-center p-t-27 p-b-239">
-						<a href="login1.php" class="txt2">
-						SIGN IN AS A DOCTOR
+						<span class="txt1">
+							Forgot
+						</span>
+
+						<a href="#" class="txt2">
+							User name / password?
 						</a>
 					</div>
 
